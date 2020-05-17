@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .img1 {
+            display: block;
+            margin: 0 auto;
+        }
+
+        div {
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <!-- way 1: -->
+    <!-- image center with simple way:
+    image element by default inline hota hay toh
+    inline elements par padding or margin nai lagta ,
+    toh img element ko hum nay display:block kardiya hay 
+    ta k is ka behavior change hosakay
+    matlab yey hay k margin lag sakkay -->
+
+    <img src="firefox-logo.png" alt="" class="img1">
+    
+    <!-- way 2: -->
+    <div>
+        <img src="firefox-logo.png" alt="">
+    </div>
+    
+</body>
+</html>
