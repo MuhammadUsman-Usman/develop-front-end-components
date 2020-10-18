@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flip Card 2</title>
+    <style>
+        
+        * {
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body {
+            margin: 100px;
+        }
+
+
+        .the-card {
+            position: relative;
+            width: 250px;
+            height: 350px;         
+        }
+
+    
+        .card-front-side {                
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            background-color: red;
+            color: #fff;
+            border-radius: 20px;
+            text-align: center;
+            transform: perspective(1000px) rotateY(0deg);
+            transition: transform 450ms ease;
+            backface-visibility: hidden;
+        }
+
+        .the-card:hover .card-front-side {
+            transform: perspective(1000px) rotateY(-180deg);
+        }
+
+        .card-back-side {     
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            background-color: green;
+            color: #fff;
+            border-radius: 20px;
+            text-align: center;
+            transition: transform 450ms ease;
+            /* is card ka hum nay face olta kar k rakha hay, jo k "hover" 
+            par seedah hoga */
+            transform: perspective(1000px) rotateY(180deg);                    
+        }
+
+        .the-card:hover .card-back-side {
+            transform:perspective(1000px) rotateY(0deg);
+        }
+
+
+    </style>
+</head>
+<body>
+        
+        <!-- structure may hum nay "backside" ko "pahlay" is waja say 
+            rakha hay kiyun k stack order may , pahlay yey a hay gi, 
+            phir is k baad "frontside" a hay gi card ki, is say ye hoga k
+            humara "front card" opar pahlay dikhay ga.
+        -->
+
+        <div class="the-card">     
+            <div class="card-back-side">
+                <p>Back of the Card !</p>
+            </div>
+            <div class="card-front-side">
+                <p>Front of the Card !</p>
+            </div>
+        </div>
+    
+</body>
+</html>
