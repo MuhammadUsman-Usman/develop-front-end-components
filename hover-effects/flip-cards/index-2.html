@@ -14,14 +14,28 @@
             margin: 100px;
         }
 
-
-        .the-card {
+        .main-container {
             position: relative;
             width: 250px;
-            height: 350px;         
+            height: 350px;
+            /* background-color: antiquewhite; */
+        }
+        
+        .the-card {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;         
+            transform: perspective(1000px) rotateY(0deg);
+            transform-style: preserve-3d;
+            transition: all 450ms ease;       
         }
 
-    
+        .main-container:hover .the-card {
+            transform: perspective(1000px) rotateY(-180deg);
+        }
+
         .card-front-side {                
             position: absolute;
             left: 0;
@@ -32,13 +46,7 @@
             color: #fff;
             border-radius: 20px;
             text-align: center;
-            transform: perspective(1000px) rotateY(0deg);
-            transition: transform 450ms ease;
             backface-visibility: hidden;
-        }
-
-        .the-card:hover .card-front-side {
-            transform: perspective(1000px) rotateY(-180deg);
         }
 
         .card-back-side {     
@@ -51,17 +59,13 @@
             color: #fff;
             border-radius: 20px;
             text-align: center;
-            transition: transform 450ms ease;
             /* is card ka hum nay face olta kar k rakha hay, jo k "hover" 
             par seedah hoga */
-            transform: perspective(1000px) rotateY(180deg);                    
+            transform: rotateY(180deg); 
+            backface-visibility: hidden;                             
         }
 
-        .the-card:hover .card-back-side {
-            transform:perspective(1000px) rotateY(0deg);
-        }
-
-
+    
     </style>
 </head>
 <body>
@@ -71,15 +75,17 @@
             phir is k baad "frontside" a hay gi card ki, is say ye hoga k
             humara "front card" opar pahlay dikhay ga.
         -->
-
-        <div class="the-card">     
-            <div class="card-back-side">
-                <p>Back of the Card !</p>
-            </div>
-            <div class="card-front-side">
-                <p>Front of the Card !</p>
+        <div class="main-container">
+            <div class="the-card">     
+                <div class="card-front-side">
+                    <p>Front of the Card !</p>
+                </div>
+                <div class="card-back-side">
+                    <p>Back of the Card !</p>
+                </div>
             </div>
         </div>
+        
     
 </body>
 </html>
