@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>linear gradient button</title>
+        <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        a {
+            display: inline-block;
+            text-decoration: none;
+            text-transform: uppercase;
+            color: #fff;
+            margin: 50px;
+            position: relative;
+            padding: 6px;
+            overflow: hidden;
+            box-sizing: border-box;
+            border-radius: 5px;
+        }
+
+        a:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            background-image: linear-gradient(45deg,
+            #2b21f7,
+            #2e62f6,
+            #00f0f3,
+            #00f32e,
+            #a0f300,
+            #f30000
+            );
+        }
+
+        a span {
+            position: relative;
+            z-index: 1;
+            padding: 11px 30px;
+            background: #000;
+            display: inline-block;
+            border-radius: inherit;
+        }
+
+        </style>
+    </head>
+    <body>
+        <a href="#">
+            <span>Button</span>
+        </a>
+    </body>
+</html>
+
+
+
+
+
+

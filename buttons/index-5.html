@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ripple Button</title>
+    <style>
+        
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 20px 40px;
+            background-color: #000;
+            color: #fff;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: 700;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: "";
+            position: absolute;
+            width: 0px;
+            height: 0px;
+            background: #001cff;
+            top: var(--x);
+            left: var(--y);
+            transform: translate(-50%,-50%);
+            transition: width .5s ease-in,
+                        height .5s ease-in-out;
+            border-radius: 50%;
+        }
+
+        .btn:hover::before {
+            width: 200px;
+            height: 200px;
+        }
+
+        .btn span {
+            position: relative;
+            z-index: 1;
+        }
+
+    </style>
+</head>
+<body>
+    <a href="" class="btn">
+        <span>Button</span>
+    </a>
+
+    <script>
+        let myBtn = document.querySelector(".btn");
+        myBtn.addEventListener("mousemove", (e)=> {
+            const x = e.pageX - myBtn.offsetLeft;
+            const y = e.pageY - myBtn.offsetTop;
+            myBtn.style.setProperty("--x", x + "px");
+            myBtn.style.setProperty("--y", y + "px");
+        });
+    </script>
+
+
+
+</body>
+
+</html>

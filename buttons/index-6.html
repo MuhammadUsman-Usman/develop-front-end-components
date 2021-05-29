@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Button</title>
+    <style>
+       
+       * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .btn {
+            display: inline-block;
+            font-size: 20px;
+            font-weight: 700;
+            text-decoration: none;
+            text-transform: uppercase;
+            padding: 20px 40px;
+            background: #0010ff;
+            color: #ff1818;
+            position: relative;
+            width: 150px;
+            height: 50px;
+            margin: 50px;
+            border-radius: 20px/50px;
+            overflow: hidden;
+            transition: all .3s ease-in-out;
+        }
+
+        .btn:hover {
+            /* transform: translateY(-5px); */
+            box-shadow: 0 16px 6px -15px rgba(0,0,0,0.7);
+        }
+
+    
+        .btn span {
+            position: absolute;         
+            transform: translate(-50%,-50%);
+            top: 50%;
+            left: 50%;
+            left: 50%;
+            width: 100%;
+            display: block;
+            text-align: center;
+        }
+
+        
+        .btn span:nth-child(1) {
+            top: 150%;
+            transition: top .3s ease-in-out;
+        }
+
+        .btn:hover span:nth-child(1) {
+            top: 50%;
+        }
+
+        .btn span:nth-child(2) {
+            top: 50%;
+            transition: top .3s ease-in-out 0.2s;
+            
+        }
+
+        .btn:hover span:nth-child(2) {
+            top: -150%;
+           
+        }
+
+    </style>
+</head>
+<body>
+    <a href="" class="btn">
+        <span>50% OFF</span>
+        <span>Button</span>
+    </a>  
+</body>
+</html>
