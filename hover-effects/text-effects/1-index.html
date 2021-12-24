@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Text effect</title>
+        <style>
+            html {
+                font-size: 62.5%;
+            }
+
+            *,
+            ::before,
+            ::after {
+                box-sizing: border-box;
+            }
+
+            .link {
+                font-size: 5rem;
+                color: #000;
+                font-weight: 700;
+                text-decoration: none;
+                padding: 0 1rem 0;
+                display: inline-flex;
+                flex-direction: column;
+                overflow: hidden;
+                height: 5.9rem;
+                position: relative;
+            }
+
+            .link_text {
+                flex: 0 0 100%;
+                transition: transform 500ms ease-in-out;
+            }
+
+            .link .link_text:first-child {
+                transition-delay: 100ms;
+            }
+
+
+            .link:hover .link_text:first-child {
+                transform: translateY(-5.9rem);
+            }
+
+            .link:hover .link_text:last-child {
+                transform: translateY(-5.9rem);
+            }
+
+            .link::before {
+                content: "";
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                height: .5rem;
+                background: #000;
+                transform: scaleX(0);
+                transition: transform 500ms ease-in-out 500ms;
+            }
+
+            .link:hover::before {
+                transform: scaleX(0.5);
+            }
+
+
+
+
+        </style>
+    </head>
+    <body>
+        <a href="javascript:;" class="link">
+            <span class="link_text">News</span>
+            <span class="link_text">News</span>
+        </a>
+    </body>
+</html>

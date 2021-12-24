@@ -23,46 +23,57 @@
             font-weight: 700;
             position: relative;
             overflow: hidden;
+            border-radius: 90px;
         }
 
-        .btn::before {
-            content: "";
+        .btn span:not(:first-child) {
             position: absolute;
-            width: 0px;
-            height: 0px;
-            background: #001cff;
-            top: var(--x);
-            left: var(--y);
-            transform: translate(-50%,-50%);
-            transition: width .5s ease-in,
-                        height .5s ease-in-out;
             border-radius: 50%;
+            transform: translate(-50%,-50%);
+            pointer-events: none;
+            background-color: rgb(123, 243, 108);
+            animation: ripples 1s linear 0s 1 forwards;
+            
         }
 
-        .btn:hover::before {
-            width: 200px;
-            height: 200px;
+
+        @keyframes ripples {
+            from {
+                width: 0px;
+                height: 0px;
+                opacity: .8;
+            }
+            to {
+                width: 300px;
+                height: 300px;
+                opacity: 0;
+            }
         }
 
-        .btn span {
-            position: relative;
-            z-index: 1;
-        }
+
+
 
     </style>
 </head>
 <body>
-    <a href="" class="btn">
-        <span>Button</span>
+    <a href="#" class="btn">
+        <span>Button</span> 
     </a>
 
     <script>
         let myBtn = document.querySelector(".btn");
-        myBtn.addEventListener("mousemove", (e)=> {
-            const x = e.pageX - myBtn.offsetLeft;
-            const y = e.pageY - myBtn.offsetTop;
-            myBtn.style.setProperty("--x", x + "px");
-            myBtn.style.setProperty("--y", y + "px");
+        myBtn.addEventListener("click", (e)=> {
+            const x = e.clientX - e.target.offsetLeft;
+            const y = e.clientY - e.target.offsetLeft;
+            let ripples = document.createElement('span');
+            ripples.style.left = x + "px";
+            ripples.style.top = y + "px";
+            myBtn.appendChild(ripples);
+
+            setTimeout(() => {
+                ripples.remove();
+            }, 1000);
+           
         });
     </script>
 
