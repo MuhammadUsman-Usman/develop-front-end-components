@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>arrow</title>
+    <style>
+        html {
+            font-size: 62.5%;
+        }
+
+        *,::before,::after {
+            box-sizing: border-box;
+        }
+
+        h2 {
+            font-size: 5rem;
+            display: inline-block;
+            position: relative;
+            padding: 0 5rem;
+        }
+
+        h2::after {
+            content: "";
+            position: absolute;
+            right: 0;
+            padding: 1rem;
+            border-width: 0 0.5rem 0.5rem 0;
+            border-style: solid;
+            border-color: #000;
+            top: 50%;
+            transform: translateY(-50%) rotate(45deg);
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+    <h2>Collapse</h2>
+</body>
+</html>
