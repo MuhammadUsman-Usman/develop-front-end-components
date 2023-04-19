@@ -1,0 +1,83 @@
+:root {
+    --primary-color: rgb(177, 39, 108);
+  }
+  
+  *,
+  ::before,
+  ::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    height: 100vh;
+    background-color: #181818;
+    color: #fff;
+    font-family: fantasy;
+    margin: 8rem;
+  }
+  
+  .form-group {
+    margin: 1rem 0;
+  }
+  
+  input[type="radio"] {
+    width: 0;
+    height: 0;
+    padding: 0;
+    margin: 0;
+    transform: scale(0);
+    outline: 0;
+    border: 0;
+    position: absolute;
+    opacity: 0;
+  }
+  
+  label {
+    cursor: pointer;
+    position: relative;
+    font-size: 2rem;
+  }
+  
+  label::before {
+    content: "";
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+    background-color: transparent;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    top: 50%;
+    left: -5rem;
+    transform: translateY(-50%);
+    transition: border-color 400ms ease;
+  }
+  
+  label::after {
+    content: "";
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+    background-color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    border-radius: 50%;
+    top: 50%;
+    left: -5rem;
+    transform: translateY(-50%) scale(0);
+    transition: transform 400ms ease;
+  }
+  
+  input[type="radio"]:checked + label::before {
+    border-color: var(--primary-color);
+  }
+  
+  input[type="radio"]:checked + label::after {
+    transform: translateY(-50%) scale(0.55);
+  }
+
+
+  .radio-accordions {
+    display: none;
+  }
+  

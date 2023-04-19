@@ -1,0 +1,74 @@
+
+html {
+    font-size: 62.5%;
+}
+
+
+
+*,
+::before,
+::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+
+.modal {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: 1051;
+    max-width: 500px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    display: none;
+  }
+
+  .modal.show {
+    display: block;
+  }
+
+  /* .modal:focus {
+    background: #1c151559;
+  }   */
+
+  .modal__dialog {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+
+
+.modal__content {
+    padding: 2rem;
+    background-color: aqua;
+
+  }
+
+
+  .modal__header {
+    margin-bottom: 1rem;
+  }
+
+
+  .modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1050;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.547);
+    display: none;
+  }
+
+  .modal-backdrop.show {
+    display: block;
+  }
+
+
+
